@@ -32,7 +32,24 @@ Refer [data.md](https://github.com/seanbenhur/multilingual_aggresive_gender_bias
 
 ## Results
 
-Results of various
+Results of the models in dev set and test are displayed here
+![Dev Set Results](assets/devsetresults.png?raw=true "Dev set results")
+![Final Results](assets/finalres.png?raw=true "Test set results")
+
+
+## Citation
+
+Please consider citing this project in your publications if it helps your research.
+```
+ @article{Benhur2021HypersAC,
+  title={Hypers at ComMA@ICON: Modelling Aggressiveness, Gender Bias and Communal Bias Identification},
+  author={Sean Benhur and Roshan Nayak and Kanchana Sivanraju and Adeep Hande and Subalalitha Chinnaudayar Navaneethakrishnan and Ruba Priyadharshini and Bharathi Raja Chakravarthi6},
+  journal={ArXiv},
+  year={2021},
+  volume={abs/2112.15417}
+}
+```
+
 
 
 

@@ -17,10 +17,8 @@ from transformers import AdamW, AutoTokenizer, get_scheduler
 
 from losses import bcewithlogits_loss_fn, crossentropy_loss_fn, mse_loss_fn
 from dataset import TextDataset
-from models import (Attention_Pooling_Model, Conv_Pooling_Model,
-                    Max_Pooling_Model, Mean_Max_Pooling_Model,
-                    Mean_Pooling_Model, Transformer, Transformer_CLS_Embeddings,
-                    Transformer_Pooler_Outputs)
+from models import (Attention_Pooling_Model,
+                    Mean_Pooling_Model)
 from train import evaluate_fn, train_fn
 
 logger = logging.getLogger(__name__)
@@ -126,35 +124,8 @@ def main(cfg):
             cfg.model.model_name, cfg.training.dropout, cfg.training.num_labels
         )
 
-    elif cfg.model.model_type == "Transformer_Pooler_Outputs":
-        model = Transformer_Pooler_Outputs(
-            cfg.model.model_name, cfg.training.dropout, cfg.training.num_labels
-        )
-
-    elif cfg.model.model_type == "Transformer_CLS_Embeddings":
-        model = Transformer_CLS_Embeddings(
-            cfg.model.model_name, cfg.training.dropout, cfg.training.num_labels
-        )
-
-    elif cfg.model.model_type == "Max_Pooling_Model":
-        model = Max_Pooling_Model(
-            cfg.model.model_name, cfg.training.dropout, cfg.training.num_labels
-        )
-
-    elif cfg.model.model_type == "Mean_Max_Pooling_Model":
-        model = Mean_Max_Pooling_Model(
-            cfg.model.model_name, cfg.training.dropout, cfg.training.num_labels
-        )
-
-    elif cfg.model.model_type == "Conv_Pooling_Model":
-        model = Conv_Pooling_Model(
-            cfg.model.model_name, cfg.training.dropout, cfg.training.num_labels
-        )
-
     else:
-        model = Transformer(
-            cfg.model.model_name, cfg.training.dropout, cfg.training.num_labels
-        )
+        raise RuntimeError("The provided model is not supported")
 
     logger.info(f"Using the model architecture: {cfg.model.model_type}")
     model.to(device)

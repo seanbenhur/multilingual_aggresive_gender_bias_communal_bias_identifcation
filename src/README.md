@@ -1,4 +1,4 @@
-# Project structure?
+# Project structure
 
 - The `src` folder provides a generic implementation of a python API.
 

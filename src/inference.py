@@ -1,3 +1,7 @@
+"""
+Used to make predictions and compute scores
+"""
+
 
 import json
 import logging
@@ -14,10 +18,7 @@ from transformers import AutoTokenizer
 
 from dataset import TextDataset
 
-from models import (Attention_Pooling_Model, Conv_Pooling_Model,
-                    Max_Pooling_Model, Mean_Max_Pooling_Model,
-                    Mean_Pooling_Model, Transformer, Transformer_CLS_Embeddings,
-                    Transformer_Pooler_Outputs)
+from models import Attention_Pooling_Model, Mean_Pooling_Model
 
 
 logger = logging.getLogger(__name__)

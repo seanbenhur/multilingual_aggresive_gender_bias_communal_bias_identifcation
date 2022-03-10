@@ -1,4 +1,4 @@
 
-model_name: distilbert-base-uncased                    #name of pretrained model
-tokenizer_name: distilbert-base-uncased                #name of tokenizer
-model_type: 
+model_name: google/muril-base-cased                    #name of pretrained model
+tokenizer_name: google/muril-base-cased                #name of tokenizer
+model_type: Attention_Pooling_Model

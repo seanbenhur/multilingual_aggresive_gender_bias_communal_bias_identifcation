@@ -1,4 +1,4 @@
-# Data Folder
-- Data used for training goes here.
-- This should be moved to .gitignore.
-- This is kept here just to show where your data should reside.
+# Data 
+
+The CoMMA dataset was used for training the Models, the dataset can be accessed from [here](https://competitions.codalab.org/competitions/35482)
+

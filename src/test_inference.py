@@ -1,12 +1,14 @@
+"""
+This script is used to make submissions
+"""
 
-import json
+
 import logging
 
 import hydra
 import numpy as np
 import pandas as pd
 import torch
-from sklearn.metrics import accuracy_score, f1_score, matthews_corrcoef, precision_score, recall_score
 from torch.utils.data import DataLoader
 from tqdm import tqdm
 from omegaconf.omegaconf import OmegaConf
@@ -14,10 +16,8 @@ from transformers import AutoTokenizer
 
 from dataset import TextDataset
 
-from models import (Attention_Pooling_Model, Conv_Pooling_Model,
-                    Max_Pooling_Model, Mean_Max_Pooling_Model,
-                    Mean_Pooling_Model, Transformer, Transformer_CLS_Embeddings,
-                    Transformer_Pooler_Outputs)
+from models import (Attention_Pooling_Model,
+                    Mean_Pooling_Model)
 
 
 logger = logging.getLogger(__name__)
@@ -48,36 +48,8 @@ def get_predictions(dataloader, model_type, model_path, model_name, dropout, num
             model_name, dropout, num_labels
         )
 
-    elif model_type == "Transformer_Pooler_Outputs":
-        model = Transformer_Pooler_Outputs(
-           model_name, dropout, num_labels
-        )
-
-    elif model_type == "Transformer_CLS_Embeddings":
-        model = Transformer_CLS_Embeddings(
-            model_name, dropout, num_labels
-        )
-
-    elif model_type == "Max_Pooling_Model":
-        model = Max_Pooling_Model(
-            model_name, dropout, num_labels
-        )
-
-    elif model_type == "Mean_Max_Pooling_Model":
-        model = Mean_Max_Pooling_Model(
-            model_name, dropout, num_labels
-        )
-
-    elif model_type == "Conv_Pooling_Model":
-        model = Conv_Pooling_Model(
-            model_name, dropout, num_labels
-        )
-
     else:
-        model = Transformer(
-            model_name, dropout, num_labels
-        )
-
+        raise RuntimeError("The provided model is not yet supported")
 
     model.load_state_dict(torch.load(model_path,map_location=device))
     model.to(device)

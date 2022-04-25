@@ -8,7 +8,7 @@ This is the official github repository for the solution for ComMA@ICON 2021 Shar
 Due to the exponentially increasing reach of social media, it is essential to focus on its negative aspects as it can potentially divide society and incite people into violence. In this paper, we present our system description of work on the shared task ComMA@ICON, where we have to classify how aggressive the sentence is and if the sentence is gender-biased or communal-biased.These three could be the primary reasons to cause significant problems in society. As team Hypers we have proposed an approach which utilizes different pretrained models with Attention and mean pooling methods. We were able to get Rank 3 with 0.223 Instance F1 score on Bengali, Rank 2 with 0.322 Instance F1 score on Multi-lingual set, Rank 4 with 0.129 Instance F1 score on Meitei and Rank 5 with 0.336 Instance F1 score on Hindi. The source code and the pretrained models of this work can be found here1.
 
 ## Model Weights with better results
-After the publication, we found using  XLM-Align-Base model improves the results further without using Attention/Mean Pooling, The model weights will be avilable in the huggingface hub
+After the publication, we found using  XLM-Align-Base model improves the results, The model weights for Gender Bias Dection is available in the [Huggingface Hub](https://huggingface.co/seanbenhur/MuLTiGENBiaS)
 
 
 ## Tak Overview

@@ -40,10 +40,10 @@ Results of the models in dev set and test are displayed here
 ## Citation
 
 Please consider citing this project in your publications if it helps your research.
-```
+```tex
  @article{Benhur2021HypersAC,
   title={Hypers at ComMA@ICON: Modelling Aggressiveness, Gender Bias and Communal Bias Identification},
-  author={Sean Benhur and Roshan Nayak and Kanchana Sivanraju and Adeep Hande and Subalalitha Chinnaudayar Navaneethakrishnan and Ruba Priyadharshini and Bharathi Raja Chakravarthi6},
+  author={Sean Benhur and Roshan Nayak and Kanchana Sivanraju and Adeep Hande and Subalalitha Chinnaudayar Navaneethakrishnan and Ruba Priyadharshini and Bharathi Raja Chakravarthi},
   journal={ArXiv},
   year={2021},
   volume={abs/2112.15417}
